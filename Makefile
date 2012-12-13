@@ -1,25 +1,25 @@
-CPP=g++
-CPP_FLAGS=-c -Wall
+CXX ?= g++
+CXX_FLAGS =-c -Wall
 
 all: sudoku
 
 sudoku: main.o Grid.o PuzzleSolver.o SudokuGrid.o SudokuSolver.o
-	$(CPP) main.o Grid.o PuzzleSolver.o SudokuGrid.o SudokuSolver.o -o sudoku
+	$(CXX) main.o Grid.o PuzzleSolver.o SudokuGrid.o SudokuSolver.o -o sudoku
 
-main.o: main.cpp
-	$(CPP) $(CPP_FLAGS) main.cpp
+main.o: src/main.cpp
+	$(CXX) $(CXX_FLAGS) src/main.cpp
 
-Grid.o: Grid.cpp
-	$(CPP) $(CPP_FLAGS) Grid.cpp
+Grid.o: src/Grid.cpp
+	$(CXX) $(CXX_FLAGS) src/Grid.cpp
 
-PuzzleSolver.o: PuzzleSolver.cpp
-	$(CPP) $(CPP_FLAGS) PuzzleSolver.cpp
+PuzzleSolver.o: src/PuzzleSolver.cpp
+	$(CXX) $(CXX_FLAGS) src/PuzzleSolver.cpp
 
-SudokuGrid.o: SudokuGrid.cpp
-	$(CPP) $(CPP_FLAGS) SudokuGrid.cpp
+SudokuGrid.o: src/SudokuGrid.cpp
+	$(CXX) $(CXX_FLAGS) src/SudokuGrid.cpp
 
-SudokuSolver.o: SudokuSolver.cpp
-	$(CPP) $(CPP_FLAGS) SudokuSolver.cpp
+SudokuSolver.o: src/SudokuSolver.cpp
+	$(CXX) $(CXX_FLAGS) src/SudokuSolver.cpp
 
 clean: 
 	rm -rf *.o sudoku
