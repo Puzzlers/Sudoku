@@ -6,8 +6,10 @@ int main()
     SudokuGrid sudoku;
     PuzzleSolver* solver = PuzzleSolver::getPuzzleSolver("Sudoku");
 
-    if (solver)
+    if (solver) {
         solver->solve(sudoku);
+        delete solver;
+    }
 
     return 0;
 }

@@ -9,6 +9,4 @@ public:
     bool solve(Grid &grid);
 };
 
-REGISTER_PUZZLE_SOLVER(SudokuSolver, "Sudoku");
-
 #endif // SUDOKUSOLVER_H

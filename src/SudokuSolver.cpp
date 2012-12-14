@@ -3,6 +3,7 @@
 
 #include <math.h>
 
+REGISTER_PUZZLE_SOLVER(SudokuSolver, "Sudoku");
 bool SudokuSolver::solve(Grid &grid)
 {
     for(int i = 0; i < 9; i++)

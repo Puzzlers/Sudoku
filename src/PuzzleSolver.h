@@ -12,12 +12,12 @@ typedef PuzzleSolver* (*PuzzleSolverGenerator)();
 
 class PuzzleSolver {
 public:
-    static PuzzleSolver* getPuzzleSolver(const std::string& type);
-
-    static bool addToRegistry(const std::string& id, PuzzleSolverGenerator generator);
+    virtual ~PuzzleSolver() {}
 
     virtual bool solve(Grid &grid) = 0;
 
+    static PuzzleSolver* getPuzzleSolver(const std::string& type);
+    static bool addToRegistry(const std::string& id, PuzzleSolverGenerator generator);
 private:
     static std::map<std::string, PuzzleSolverGenerator> m_registry;
 };
